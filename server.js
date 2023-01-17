@@ -10,7 +10,7 @@ sequelize.sync().then(() => console.log("Database is now ready"));
 
 // INI HARUS DIPIKIRIN, bikin endpoint
 const userEndpoint = require("./routes/users"); // folder routes itu udah kayak library yang kita bikin sendiri (manual)
-
+const absensiEndpoint = require("./routes/absensi");
 // pake express
 // console.log("running server on port", port);
 
@@ -22,5 +22,6 @@ app.use(express.json());
 
 // INI HARUS DIPIKIRIN
 app.use("/users", userEndpoint);
+app.use("/absensi", absensiEndpoint);
 
 app.listen(port, () => console.log(`Running server on port ${port}`));
